@@ -3,10 +3,22 @@ from PIL import Image
 
 import pandas as pd
 import joblib
+import pickle
+import os
 
-model = joblib.load(filename = '../MODEL/reg_model.pkl')
+# Get the absolute path of the MODEL folder
+model_folder = os.path.join(os.path.dirname(__file__), '..', 'MODEL')
 
-image = Image.open('..\PPT_and_report\\marseille_port.jpg')
+# Load the trained model
+model_path = os.path.join(model_folder, 'reg_model.pkl')
+with open(model_path, 'rb') as file:
+    model = pickle.load(file)
+
+
+image_folder = os.path.join(os.path.dirname(__file__), '..', 'PPT_and_report')
+image_path = os.path.join(image_folder, 'marseille_port.jpg')
+
+image = Image.open(image_path) 
 st.image(image, caption='Port de Marseille')
 
 st.title('What is the rental price for a house in Marseille ? :house:')
@@ -37,6 +49,7 @@ feature_dict = {'traveler': [traveler],'bathroom': [bathroom], 'free_parking_on_
                 'microwave_oven': [microwave_oven], 
                 'smoker': [smoker], "backyard":[backyard], "workspace":[workspace], 'private_garden': [private_garden],
                 'swimming_pool': [swimming_pool], 'surface': [surface],'transport_access': [transport_access]}
+
 
 #predict price :
 def predict_location():
