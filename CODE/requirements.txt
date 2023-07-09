@@ -1,6 +1,5 @@
 shap
 streamlit
-PIL
 pandas
 pickle
 os
