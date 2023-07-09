@@ -2,7 +2,7 @@ import streamlit as st
 from PIL import Image
 
 import pandas as pd
-import pickle
+import pickle5 as pickle
 import os
 
 # Get the absolute path of the MODEL folder
