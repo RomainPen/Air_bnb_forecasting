@@ -1,5 +1,6 @@
 shap
 streamlit
 pandas
+Pillow
 pickle5
-os
+os-sys
