@@ -4,9 +4,9 @@ from PIL import Image
 import pandas as pd
 import joblib
 
-model = joblib.load(filename = 'C:\\Users\\Pénichon\\Desktop\\M1_eco_stat\\S2\\ML_project\\Air_bnb_forecasting\\MODEL\\reg_model.pkl')
+model = joblib.load(filename = '../MODEL/reg_model.pkl')
 
-image = Image.open('C:\\Users\\Pénichon\\Desktop\\M1_eco_stat\\S2\\ML_project\\Air_bnb_forecasting\\PPT_and_report\\marseille_port.jpg')
+image = Image.open('..\PPT_and_report\\marseille_port.jpg')
 st.image(image, caption='Port de Marseille')
 
 st.title('What is the rental price for a house in Marseille ? :house:')
