@@ -1,4 +1,5 @@
 shap
+ipython
 streamlit
 pandas
 Pillow
