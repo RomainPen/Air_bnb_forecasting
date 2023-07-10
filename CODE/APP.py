@@ -60,9 +60,8 @@ def main():
         traveler = st.number_input("number of traveler", 1, 15)
         bathroom = st.slider("number of bathroom", 0, 10)
         
-        private_garden = 0
-        if st.checkbox("private garden") : 
-            private_garden = 1
+        
+        private_garden = 1 if st.checkbox("private garden") else 0
             
         workspace = 0
         if st.checkbox("workspace") : 
