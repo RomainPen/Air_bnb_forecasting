@@ -66,7 +66,7 @@ def main():
         surface = st.slider("surface (m2)",0,1000)
         transport_access = st.select_slider("transport access", [0,1])
 
-    feature_dict = {'traveler': [float(traveler)],'bathroom': [float(bathroom)], 'free_parking_on_site': [float(free_parking_on_site)],
+    feature_dict = {'traveler': [traveler],'bathroom': [float(bathroom)], 'free_parking_on_site': [float(free_parking_on_site)],
                     'free_street_parking': [float(free_street_parking)], 'heating': [float(heating)], 'seaview': [float(seaview)], 'AC': [float(AC)],
                     'wifi': [float(wifi)], 'accepted_animals': [float(accepted_animals)], 'tv': [float(tv)], 'microwave_oven': [float(microwave_oven)], 
                     'smoker': [float(smoker)], "backyard": [float(backyard)], "workspace":[float(workspace)], 'private_garden': [float(private_garden)],
