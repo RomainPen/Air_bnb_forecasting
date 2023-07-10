@@ -40,24 +40,6 @@ def predict_location(individual_features) :
     return predict
 
 
-
-
-# Shapley value :
-def st_shap(plot, height=None):
-    shap_html = f"<head>{shap.getjs()}</head><body>{plot.html()}</body>"
-    components.html(shap_html, height=height)
-
-"""
-explainer = shap.Explainer(model.predict, x_train)
-def explain_model_prediction(data):
-    # Calculate Shap values
-    explainer = shap.Explainer(model.predict, x_train)
-    shap_values = explainer.shap_values(x_train)
-    return shap_values
-"""
-
-
-
 # Main function :
 def main():
     # Image :
@@ -109,9 +91,14 @@ def main():
 
 
         # Explain the prediction with shapley method :
+        
         st.subheader('Summary Plot')
         explainer = shap.Explainer(model.predict, x_train)
         shap_values = explainer(pd.DataFrame(feature_dict))
+        
+        shap.initjs()
+        shap.plots.force(shap_values[0])
+        
         fig, ax = plt.subplots(nrows=1, ncols=1)
         shap.plots.waterfall(shap_values[0], max_display=20)
         st.pyplot(fig)
