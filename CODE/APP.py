@@ -59,21 +59,67 @@ def main():
         surface = st.text_input("surface (m2)", "100")
         traveler = st.number_input("number of traveler", 1, 15)
         bathroom = st.slider("number of bathroom", 0, 10)
-        private_garden = st.select_slider("private garden", [0,1])
-        workspace = st.select_slider("workspace", [0,1])
-        swimming_pool = st.select_slider("swimming pool", [0,1])
-        transport_access = st.select_slider("transport access", [0,1])
-        free_parking_on_site = st.select_slider("Free parking on site", [0,1])
-        free_street_parking = st.select_slider("Free parking on street", [0,1])
-        smoker = st.select_slider("smoker", [0,1])
-        accepted_animals = st.select_slider("accepted animals", [0,1])
-        AC = st.select_slider("AC (climatisation)", [0,1])
-        wifi = st.select_slider("wifi", [0,1])
-        tv = st.select_slider("tv", [0,1])
-        microwave_oven = st.select_slider("microwave_oven", [0,1])
-        heating = st.select_slider("heating", [0,1])
-        backyard = st.select_slider("backyard", [0,1])
-        seaview = st.select_slider("seaview", [0,1])
+        
+        private_garden = 0
+        if st.checkbox("private garden") : 
+            private_garden = 1
+            
+        workspace = 0
+        if st.checkbox("workspace") : 
+            workspace = 1   
+            
+        swimming_pool = 0
+        if st.checkbox("swimming pool") : 
+            swimming_pool = 1
+            
+        transport_access = 0
+        if st.checkbox("transport access") : 
+            transport_access = 1   
+
+        free_parking_on_site = 0
+        if st.checkbox("free parking on site") : 
+            free_parking_on_site = 1
+            
+        free_street_parking = 0
+        if st.checkbox("free street parking") : 
+            free_street_parking = 1   
+            
+        smoker = 0
+        if st.checkbox("smoker") : 
+            smoker = 1
+            
+        accepted_animals = 0
+        if st.checkbox("accepted animals") : 
+            accepted_animals = 1
+
+        AC = 0
+        if st.checkbox("AC") : 
+            AC = 1   
+            
+        wifi = 0
+        if st.checkbox("wifi") : 
+            wifi = 1
+            
+        tv = 0
+        if st.checkbox("tv") : 
+            tv = 1   
+
+        microwave_oven = 0
+        if st.checkbox("microwave oven") : 
+            microwave_oven = 1
+            
+        heating = 0
+        if st.checkbox("heating") : 
+            heating = 1   
+            
+        backyard = 0
+        if st.checkbox("backyard") : 
+            backyard = 1
+            
+        seaview = 0
+        if st.checkbox("seaview") : 
+            seaview = 1
+
 
     feature_dict = {'traveler': [traveler],'bathroom': [bathroom], 'free_parking_on_site': [free_parking_on_site],
                     'free_street_parking': [free_street_parking], 'heating': [heating], 'seaview': [seaview], 'AC': [AC],
