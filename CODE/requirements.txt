@@ -3,4 +3,3 @@ streamlit
 pandas
 Pillow
 pickle5
-os-sys

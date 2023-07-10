@@ -4,6 +4,7 @@ from PIL import Image
 import pandas as pd
 import pickle
 import os
+import sys
 
 # Get the absolute path of the MODEL folder
 model_folder = os.path.join(os.path.dirname(__file__), '..', 'MODEL')
