@@ -135,7 +135,7 @@ def main():
         st.success(prediction)
 
         # Explain the prediction with shapley method :
-        st.subheader('Summary Plot')
+        st.subheader('Explanation of the prediction')
         explainer = shap.Explainer(model.predict, x_train)
         shap_values = explainer(pd.DataFrame(feature_dict))
 
