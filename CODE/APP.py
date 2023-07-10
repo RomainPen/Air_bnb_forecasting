@@ -112,7 +112,7 @@ def main():
 
         shap_values = explain_model_prediction(x_train)
         st.subheader('Model Prediction Interpretation Plot')
-        st_shap(shap.force_plot(shap_values[0]))
+        #st_shap(shap.force_plot(shap_values[0]))
         
         # Summary plot SHAP
         st.subheader('Summary Plot')
