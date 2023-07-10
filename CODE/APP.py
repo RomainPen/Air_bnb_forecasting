@@ -59,66 +59,21 @@ def main():
         surface = st.text_input("surface (m2)", "100")
         traveler = st.number_input("number of traveler", 1, 15)
         bathroom = st.slider("number of bathroom", 0, 10)
-        
-        
         private_garden = 1 if st.checkbox("private garden") else 0
-            
-        workspace = 0
-        if st.checkbox("workspace") : 
-            workspace = 1   
-            
-        swimming_pool = 0
-        if st.checkbox("swimming pool") : 
-            swimming_pool = 1
-            
-        transport_access = 0
-        if st.checkbox("transport access") : 
-            transport_access = 1   
-
-        free_parking_on_site = 0
-        if st.checkbox("free parking on site") : 
-            free_parking_on_site = 1
-            
-        free_street_parking = 0
-        if st.checkbox("free street parking") : 
-            free_street_parking = 1   
-            
-        smoker = 0
-        if st.checkbox("smoker") : 
-            smoker = 1
-            
-        accepted_animals = 0
-        if st.checkbox("accepted animals") : 
-            accepted_animals = 1
-
-        AC = 0
-        if st.checkbox("AC") : 
-            AC = 1   
-            
-        wifi = 0
-        if st.checkbox("wifi") : 
-            wifi = 1
-            
-        tv = 0
-        if st.checkbox("tv") : 
-            tv = 1   
-
-        microwave_oven = 0
-        if st.checkbox("microwave oven") : 
-            microwave_oven = 1
-            
-        heating = 0
-        if st.checkbox("heating") : 
-            heating = 1   
-            
-        backyard = 0
-        if st.checkbox("backyard") : 
-            backyard = 1
-            
-        seaview = 0
-        if st.checkbox("seaview") : 
-            seaview = 1
-
+        workspace = 1 if st.checkbox("workspace") else 0
+        swimming_pool = 1 if st.checkbox("swimming pool") else 0    
+        transport_access = 1 if st.checkbox("transport access") else 0 
+        free_parking_on_site = 1 if st.checkbox("free parking on site") else 0             
+        free_street_parking = 1 if st.checkbox("free street parking") else 0             
+        smoker = 1 if st.checkbox("smoker") else 0             
+        accepted_animals = 1 if st.checkbox("accepted animals") else 0
+        AC = 1 if st.checkbox("AC") else 0    
+        wifi = 1 if st.checkbox("wifi") else 0             
+        tv = 1 if st.checkbox("tv") else 0   
+        microwave_oven = 1 if st.checkbox("microwave oven") else 0             
+        heating = 1 if st.checkbox("heating") else 0             
+        backyard = 1 if st.checkbox("backyard") else 0              
+        seaview = 1 if st.checkbox("seaview") else 0 
 
     feature_dict = {'traveler': [traveler],'bathroom': [bathroom], 'free_parking_on_site': [free_parking_on_site],
                     'free_street_parking': [free_street_parking], 'heating': [heating], 'seaview': [seaview], 'AC': [AC],
