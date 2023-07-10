@@ -47,12 +47,14 @@ def st_shap(plot, height=None):
     shap_html = f"<head>{shap.getjs()}</head><body>{plot.html()}</body>"
     components.html(shap_html, height=height)
 
+"""
 explainer = shap.Explainer(model.predict, x_train)
 def explain_model_prediction(data):
     # Calculate Shap values
-    shap_values = explainer.shap_values(data)
+    explainer = shap.Explainer(model.predict, x_train)
+    shap_values = explainer.shap_values(x_train)
     return shap_values
-
+"""
 
 
 
@@ -105,13 +107,12 @@ def main():
         # Print the prediction :
         st.success(prediction)
 
+
         # Explain the prediction with shapley method :
-        
-        #st_shap(shap.force_plot(explainer.expected_value, shap_values, x_train), 400) #shap.plots.waterfall(shap_values[0], max_display=20))
-
-
-        shap_values = explain_model_prediction(x_train)
-        st.subheader('Model Prediction Interpretation Plot')
+        explainer = shap.Explainer(model.predict, x_train)
+        shap_values = explainer.shap_values(x_train)
+    
+        #st.subheader('Model Prediction Interpretation Plot')
         #st_shap(shap.force_plot(shap_values[0]))
         
         # Summary plot SHAP
