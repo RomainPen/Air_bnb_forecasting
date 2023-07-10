@@ -76,7 +76,7 @@ def main():
     if st.button('Predict the rental price') :
         prediction = predict_location(feature_dict)
 
-    st.success(prediction)
+        st.success(prediction)
 
 
 # __name__ :
