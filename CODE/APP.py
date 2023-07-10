@@ -98,7 +98,7 @@ def main():
         explainer = shap.Explainer(model.predict, x_train)
         shap_values = explainer(feature_dict)
         
-        st_shap(shap.plots.waterfall(shap_values[0], max_display=20))
+        st_shap(shap.force_plot(explainer.expected_value, shap_values, x_train), 400) #shap.plots.waterfall(shap_values[0], max_display=20))
 
 
 # __name__ :
