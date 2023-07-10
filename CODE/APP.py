@@ -111,16 +111,13 @@ def main():
         # Explain the prediction with shapley method :
         st.subheader('Summary Plot')
         explainer = shap.Explainer(model.predict, x_train)
-        shap_values = explainer.shap_values(x_train)
+        shap_values = explainer(pd.DataFrame(feature_dict))
         fig, ax = plt.subplots(nrows=1, ncols=1)
         shap.plots.waterfall(shap_values[0], max_display=20)
         st.pyplot(fig)
         
         
-        
-        
-        
-          
+    
 # __name__ :
 if __name__ == '__main__' :
     main()
