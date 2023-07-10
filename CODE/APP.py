@@ -1,4 +1,5 @@
 import streamlit as st
+import streamlit.components.v1 as components
 from PIL import Image
 from datetime import datetime, timedelta
 
@@ -8,6 +9,7 @@ import os
 import sys
 import xgboost
 from xgboost import XGBRegressor
+import shap
 
 
 # Load the model :
@@ -15,6 +17,13 @@ model_folder = os.path.join(os.path.dirname(__file__), '..', 'MODEL')
 model_path = os.path.join(model_folder, 'reg_model.pkl')
 with open(model_path, 'rb') as file:
     model = pickle.load(file)
+
+
+# import x_train for shapley value :
+df_folder = os.path.join(os.path.dirname(__file__), '..', 'DATA')
+df_path = os.path.join(df_folder, 'x_train.csv')
+with open(df_path, 'r') as file:
+    x_train = pd.read_csv(file, sep=";")
 
 
 # Load the image : 
@@ -28,6 +37,12 @@ def predict_location(individual_features) :
     df_for_pred = pd.DataFrame(individual_features)
     predict = model.predict(df_for_pred)[0]
     return predict
+
+
+# Shapley value :
+def st_shap(plot, height=None):
+    shap_html = f"<head>{shap.getjs()}</head><body>{plot.html()}</body>"
+    components.html(shap_html, height=height)
 
 
 # Main function :
@@ -75,8 +90,15 @@ def main():
     # Predict button :
     if st.button('Predict the rental price') :
         prediction = predict_location(feature_dict)
-
+        
+        # Print the prediction :
         st.success(prediction)
+
+        # Explain the prediction with shapley method :
+        explainer = shap.Explainer(model.predict, x_train)
+        shap_values = explainer(feature_dict)
+        
+        st_shap(shap.plots.waterfall(shap_values[0], max_display=20))
 
 
 # __name__ :
