@@ -26,8 +26,7 @@ image = Image.open(image_path)
 # Predict price :
 def predict_location(individual_features) :
     df_for_pred = pd.DataFrame(individual_features)
-    predict = model.predict(df_for_pred)[0]
-    
+    predict = model.predict(df_for_pred) #[0]
     return predict
 
 
@@ -81,5 +80,5 @@ def main():
 
 
 # __name__ :
-if __name__ == '__main__' :
-    main()
+#if __name__ == '__main__' :
+#    main()
