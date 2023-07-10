@@ -24,11 +24,11 @@ image = Image.open(image_path)
 
 
 # Predict price :
-def predict_location(individual_features):
+def predict_location(individual_features) :
     df_for_pred = pd.DataFrame(individual_features)
     predict = model.predict(df_for_pred)[0]
     
-    return st.success(predict)
+    return predict
 
 
 # Main function :
