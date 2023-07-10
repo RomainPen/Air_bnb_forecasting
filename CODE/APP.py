@@ -73,11 +73,11 @@ def main():
                         'smoker': [smoker], "backyard":[backyard], "workspace":[workspace], 'private_garden': [private_garden],
                         'swimming_pool': [swimming_pool], 'surface': [surface],'transport_access': [transport_access]}
 
-        # Predict button :
-        if st.button('Predict the rental price') :
-            prediction = predict_location(feature_dict)
-        
-        st.success(prediction)
+    # Predict button :
+    if st.button('Predict the rental price') :
+        prediction = predict_location(feature_dict)
+    
+    st.success(prediction)
 
 
 # __name__ :
