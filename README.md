@@ -2,5 +2,4 @@
 Link : https://apppy-thhxw2hpxns.streamlit.app/
 
 #Example of production :
-![image](https://github.com/RomainPen/Air_bnb_forecasting/assets/104683031/92919b79-8613-4381-bdfb-4c4cf4927505)
-![image](https://github.com/RomainPen/Air_bnb_forecasting/assets/104683031/694a8c14-f29c-4c92-83d0-98333b49ec71)
+[Demo](PPT_and_report/streamlit-APP-2023-07-10-23-07-15.webm)
