@@ -59,7 +59,7 @@ def main():
         surface = st.text_input("surface (m2)", "100")
         traveler = st.number_input("number of traveler", 1, 15)
         bathroom = st.slider("number of bathroom", 0, 10)
-        private_garden = st.checkbox("private garden", [0,1])
+        private_garden = st.slider("private garden", [0,1])
         workspace = st.select_slider("workspace", [0,1])
         swimming_pool = st.select_slider("swimming pool", [0,1])
         transport_access = st.select_slider("transport access", [0,1])
