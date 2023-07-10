@@ -56,7 +56,7 @@ def main():
         st.write("Heure à Paris : ",time)
         
         # Features params :
-        surface = st.text_input("surface (m2)", 100)
+        surface = st.text_input("surface (m2)", "100")
         traveler = st.number_input("number of traveler", 1, 15)
         bathroom = st.slider("number of bathroom", 0, 10)
         private_garden = st.checkbox("private garden", [0,1])
@@ -79,7 +79,7 @@ def main():
                     'free_street_parking': [free_street_parking], 'heating': [heating], 'seaview': [seaview], 'AC': [AC],
                     'wifi': [wifi], 'accepted_animals': [accepted_animals], 'tv': [tv], 'microwave_oven': [microwave_oven], 
                     'smoker': [smoker], "backyard": [backyard], "workspace":[workspace], 'private_garden': [private_garden],
-                    'swimming_pool': [swimming_pool], 'surface': [surface],'transport_access': [transport_access]}
+                    'swimming_pool': [swimming_pool], 'surface': [float(surface)],'transport_access': [transport_access]}
 
     # Predict button :
     if st.button('Predict the rental price') :
