@@ -96,12 +96,14 @@ def main():
         explainer = shap.Explainer(model.predict, x_train)
         shap_values = explainer(pd.DataFrame(feature_dict))
         
+        fig1, ax = plt.subplots(nrows=1, ncols=1)
         shap.initjs()
         shap.plots.force(shap_values[0])
+        st.pyplot(fig1)
         
-        fig, ax = plt.subplots(nrows=1, ncols=1)
+        fig2, ax = plt.subplots(nrows=1, ncols=1)
         shap.plots.waterfall(shap_values[0], max_display=20)
-        st.pyplot(fig)
+        st.pyplot(fig2)
         
         
     
