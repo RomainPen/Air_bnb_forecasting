@@ -67,16 +67,16 @@ def main():
         surface = st.slider("surface (m2)",0,1000),
         transport_access = st.select_slider("transport access", [0,1]), 
 
-        feature_dict = {'traveler': [traveler],'bathroom': [bathroom], 'free_parking_on_site': [free_parking_on_site],
-                        'free_street_parking': [free_street_parking], 'heating': [heating], 'seaview': [seaview], 'AC': [AC],
-                        'wifi': [wifi], 'accepted_animals': [accepted_animals], 'tv': [tv], 'microwave_oven': [microwave_oven], 
-                        'smoker': [smoker], "backyard":[backyard], "workspace":[workspace], 'private_garden': [private_garden],
-                        'swimming_pool': [swimming_pool], 'surface': [surface],'transport_access': [transport_access]}
+    feature_dict = {'traveler': [traveler],'bathroom': [bathroom], 'free_parking_on_site': [free_parking_on_site],
+                    'free_street_parking': [free_street_parking], 'heating': [heating], 'seaview': [seaview], 'AC': [AC],
+                    'wifi': [wifi], 'accepted_animals': [accepted_animals], 'tv': [tv], 'microwave_oven': [microwave_oven], 
+                    'smoker': [smoker], "backyard":[backyard], "workspace":[workspace], 'private_garden': [private_garden],
+                    'swimming_pool': [swimming_pool], 'surface': [surface],'transport_access': [transport_access]}
 
     # Predict button :
     if st.button('Predict the rental price') :
         prediction = predict_location(feature_dict)
-    
+
     st.success(prediction)
 
 
