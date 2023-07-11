@@ -41,12 +41,12 @@ def predict_location(individual_features) :
 
 # Main function :
 def main():
-    # Image :
-    st.image(image, caption='Port de Marseille')
-
     # Title :
     st.title('What is the rental price for a house in Marseille ? :house:')
-
+    
+    # Image :
+    st.image(image, caption='Port de Marseille')
+    
 
     with st.sidebar :
         
